@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RMF Phone</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="phone-container" id="phoneContainer">
+        <!-- Phone Frame -->
+        <div class="phone-frame">
+            <!-- Status Bar -->
+            <div class="status-bar">
+                <div class="status-left">
+                    <span class="time" id="currentTime">9:41</span>
+                    <div class="settings-icon" id="settingsIcon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.2.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="notch"></div>
+                <div class="status-right">
+                    <div class="signal-strength">
+                        <div class="signal-bar" style="height: 4px;"></div>
+                        <div class="signal-bar" style="height: 6px;"></div>
+                        <div class="signal-bar" style="height: 8px;"></div>
+                        <div class="signal-bar" style="height: 10px;"></div>
+                    </div>
+                    <div class="wifi-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                            <path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.07 2.93 1 9zm8 8l3 3 3-3c-1.65-1.66-4.34-1.66-6 0zm-4-4l2 2c2.76-2.76 7.24-2.76 10 0l2-2C15.14 9.14 8.87 9.14 5 13z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <div class="battery">
+                        <div class="battery-level" style="width: 80%;"></div>
+                    </div>
+                    <span class="battery-percentage">80%</span>
+                </div>
+            </div>
+
+            <!-- Screen Content -->
+            <div class="screen-content" id="screenContent">
+                
+                <!-- Setup Screen -->
+                <div class="screen setup-screen active" id="setupScreen">
+                    <div class="setup-content">
+                        <div class="setup-logo">
+                            <div class="phone-icon">📱</div>
+                        </div>
+                        <h1>Welcome to RMF Phone</h1>
+                        <p>Your new iPhone experience starts here</p>
+                        <button class="setup-button" id="getStartedBtn">Get Started</button>
+                    </div>
+                </div>
+
+                <!-- Home Screen -->
+                <div class="screen home-screen" id="homeScreen">
+                    <div class="wallpaper"></div>
+                    <div class="home-content">
+                        <div class="app-grid">
+                            <div class="app-icon" data-app="phone">
+                                <div class="icon-bg phone-app">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                                        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" fill="white"/>
+                                    </svg>
+                                </div>
+                                <span>Phone</span>
+                            </div>
+                            <div class="app-icon" data-app="messages">
+                                <div class="icon-bg messages-app">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                                        <path d="M20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h4l4 4 4-4h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" fill="white"/>
+                                    </svg>
+                                </div>
+                                <span>Messages</span>
+                            </div>
+                            <div class="app-icon" data-app="google">
+                                <div class="icon-bg google-app">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                                        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" fill="white"/>
+                                    </svg>
+                                </div>
+                                <span>Google</span>
+                            </div>
+                            <div class="app-icon" data-app="camera">
+                                <div class="icon-bg camera-app">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                                        <path d="M12 15.2c1.77 0 3.2-1.43 3.2-3.2s-1.43-3.2-3.2-3.2-3.2 1.43-3.2 3.2 1.43 3.2 3.2 3.2zm0-5.6c1.32 0 2.4 1.08 2.4 2.4s-1.08 2.4-2.4 2.4-2.4-1.08-2.4-2.4 1.08-2.4 2.4-2.4z" fill="white"/>
+                                        <path d="M9 2L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9zm11 15H4V6h4.05l1.83-2h4.24l1.83 2H20v11z" fill="white"/>
+                                    </svg>
+                                </div>
+                                <span>Camera</span>
+                            </div>
+                        </div>
+                        <div class="dock">
+                            <div class="dock-background"></div>
+                            <div class="dock-icons">
+                                <div class="dock-app" data-app="phone">
+                                    <div class="dock-icon phone-app">
+                                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                                            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" fill="white"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="dock-app" data-app="messages">
+                                    <div class="dock-icon messages-app">
+                                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                                            <path d="M20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h4l4 4 4-4h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" fill="white"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="dock-app" data-app="google">
+                                    <div class="dock-icon google-app">
+                                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                                            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" fill="white"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="dock-app" data-app="camera">
+                                    <div class="dock-icon camera-app">
+                                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                                            <path d="M12 15.2c1.77 0 3.2-1.43 3.2-3.2s-1.43-3.2-3.2-3.2-3.2 1.43-3.2 3.2 1.43 3.2 3.2 3.2zm0-5.6c1.32 0 2.4 1.08 2.4 2.4s-1.08 2.4-2.4 2.4-2.4-1.08-2.4-2.4 1.08-2.4 2.4-2.4z" fill="white"/>
+                                            <path d="M9 2L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9zm11 15H4V6h4.05l1.83-2h4.24l1.83 2H20v11z" fill="white"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phone App -->
+                <div class="screen app-screen phone-app-screen" id="phoneApp">
+                    <div class="app-header">
+                        <h2>Phone</h2>
+                    </div>
+                    <div class="app-content">
+                        <div class="phone-tabs">
+                            <div class="tab active" data-tab="dialpad">Keypad</div>
+                            <div class="tab" data-tab="contacts">Contacts</div>
+                            <div class="tab" data-tab="recents">Recents</div>
+                        </div>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="dialpad">
+                                <div class="phone-number-display">
+                                    <input type="text" id="phoneNumber" placeholder="Enter number" readonly>
+                                </div>
+                                <div class="dialpad">
+                                    <div class="dialpad-row">
+                                        <button class="dialpad-btn" data-number="1">1</button>
+                                        <button class="dialpad-btn" data-number="2">2<small>ABC</small></button>
+                                        <button class="dialpad-btn" data-number="3">3<small>DEF</small></button>
+                                    </div>
+                                    <div class="dialpad-row">
+                                        <button class="dialpad-btn" data-number="4">4<small>GHI</small></button>
+                                        <button class="dialpad-btn" data-number="5">5<small>JKL</small></button>
+                                        <button class="dialpad-btn" data-number="6">6<small>MNO</small></button>
+                                    </div>
+                                    <div class="dialpad-row">
+                                        <button class="dialpad-btn" data-number="7">7<small>PQRS</small></button>
+                                        <button class="dialpad-btn" data-number="8">8<small>TUV</small></button>
+                                        <button class="dialpad-btn" data-number="9">9<small>WXYZ</small></button>
+                                    </div>
+                                    <div class="dialpad-row">
+                                        <button class="dialpad-btn" data-number="*">*</button>
+                                        <button class="dialpad-btn" data-number="0">0<small>+</small></button>
+                                        <button class="dialpad-btn" data-number="#">#</button>
+                                    </div>
+                                </div>
+                                <div class="call-actions">
+                                    <button class="call-btn" id="callBtn">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" fill="white"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="contacts">
+                                <div class="contacts-list">
+                                    <div class="contact-item">
+                                        <div class="contact-avatar">👤</div>
+                                        <div class="contact-info">
+                                            <div class="contact-name">John Doe</div>
+                                            <div class="contact-number">555-0123</div>
+                                        </div>
+                                    </div>
+                                    <div class="contact-item">
+                                        <div class="contact-avatar">👤</div>
+                                        <div class="contact-info">
+                                            <div class="contact-name">Jane Smith</div>
+                                            <div class="contact-number">555-0456</div>
+                                        </div>
+                                    </div>
+                                    <div class="contact-item">
+                                        <div class="contact-avatar">👤</div>
+                                        <div class="contact-info">
+                                            <div class="contact-name">Emergency</div>
+                                            <div class="contact-number">911</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="recents">
+                                <div class="recents-list">
+                                    <div class="recent-call">
+                                        <div class="call-info">
+                                            <div class="caller-name">John Doe</div>
+                                            <div class="call-time">10:30 AM</div>
+                                        </div>
+                                        <div class="call-type outgoing">📞</div>
+                                    </div>
+                                    <div class="recent-call">
+                                        <div class="call-info">
+                                            <div class="caller-name">Jane Smith</div>
+                                            <div class="call-time">Yesterday</div>
+                                        </div>
+                                        <div class="call-type incoming">📞</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="home-indicator" data-action="home"></div>
+                </div>
+
+                <!-- Messages App -->
+                <div class="screen app-screen messages-app-screen" id="messagesApp">
+                    <div class="app-header">
+                        <h2>Messages</h2>
+                    </div>
+                    <div class="app-content">
+                        <div class="messages-list">
+                            <div class="message-item" data-chat="john">
+                                <div class="message-avatar">👤</div>
+                                <div class="message-info">
+                                    <div class="message-name">John Doe</div>
+                                    <div class="message-preview">Hey, how are you doing?</div>
+                                    <div class="message-time">10:30 AM</div>
+                                </div>
+                            </div>
+                            <div class="message-item" data-chat="jane">
+                                <div class="message-avatar">👤</div>
+                                <div class="message-info">
+                                    <div class="message-name">Jane Smith</div>
+                                    <div class="message-preview">Are we still meeting later?</div>
+                                    <div class="message-time">Yesterday</div>
+                                </div>
+                            </div>
+                            <div class="message-item" data-chat="group">
+                                <div class="message-avatar">👥</div>
+                                <div class="message-info">
+                                    <div class="message-name">Group Chat</div>
+                                    <div class="message-preview">Mike: That sounds great!</div>
+                                    <div class="message-time">2 days ago</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="home-indicator" data-action="home"></div>
+                </div>
+
+                <!-- Chat Screen -->
+                <div class="screen app-screen chat-screen" id="chatScreen">
+                    <div class="chat-header">
+                        <button class="back-btn" id="backToMessages">‹</button>
+                        <div class="chat-info">
+                            <div class="chat-name" id="chatName">John Doe</div>
+                            <div class="chat-status">Online</div>
+                        </div>
+                    </div>
+                    <div class="chat-content">
+                        <div class="chat-messages" id="chatMessages">
+                            <div class="message received">
+                                <div class="message-bubble">Hey, how are you doing?</div>
+                                <div class="message-time">10:30 AM</div>
+                            </div>
+                            <div class="message sent">
+                                <div class="message-bubble">I'm good! How about you?</div>
+                                <div class="message-time">10:32 AM</div>
+                            </div>
+                        </div>
+                        <div class="chat-input">
+                            <input type="text" id="messageInput" placeholder="Type a message...">
+                            <button id="sendMessage">Send</button>
+                        </div>
+                    </div>
+                    <div class="home-indicator" data-action="home"></div>
+                </div>
+
+                <!-- Google App -->
+                <div class="screen app-screen google-app-screen" id="googleApp">
+                    <div class="app-header">
+                        <h2>Google</h2>
+                    </div>
+                    <div class="app-content">
+                        <div class="google-search">
+                            <div class="search-bar">
+                                <input type="text" id="searchInput" placeholder="Search Google">
+                                <button id="searchBtn">🔍</button>
+                            </div>
+                            <div class="search-results" id="searchResults">
+                                <div class="search-item">
+                                    <div class="search-title">Welcome to Google</div>
+                                    <div class="search-description">Search for anything you want to know</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="home-indicator" data-action="home"></div>
+                </div>
+
+                <!-- Camera App -->
+                <div class="screen app-screen camera-app-screen" id="cameraApp">
+                    <div class="app-header">
+                        <h2>Camera</h2>
+                    </div>
+                    <div class="app-content">
+                        <div class="camera-viewfinder">
+                            <div class="camera-placeholder">
+                                <div class="camera-icon">📷</div>
+                                <p>Camera View</p>
+                            </div>
+                            <div class="camera-controls">
+                                <button class="camera-btn photo active">Photo</button>
+                                <button class="camera-btn video">Video</button>
+                            </div>
+                            <div class="capture-controls">
+                                <button class="capture-btn">📷</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="home-indicator" data-action="home"></div>
+                </div>
+
+                <!-- Settings App -->
+                <div class="screen app-screen settings-app-screen" id="settingsApp">
+                    <div class="app-header">
+                        <button class="back-btn" id="backFromSettings">‹</button>
+                        <h2>Settings</h2>
+                    </div>
+                    <div class="app-content">
+                        <div class="settings-list">
+                            <div class="settings-section">
+                                <div class="settings-item">
+                                    <div class="settings-icon">📱</div>
+                                    <div class="settings-info">
+                                        <div class="settings-title">General</div>
+                                        <div class="settings-subtitle">Software Update, Storage</div>
+                                    </div>
+                                </div>
+                                <div class="settings-item">
+                                    <div class="settings-icon">🔔</div>
+                                    <div class="settings-info">
+                                        <div class="settings-title">Notifications</div>
+                                        <div class="settings-subtitle">Alerts, Sounds</div>
+                                    </div>
+                                </div>
+                                <div class="settings-item">
+                                    <div class="settings-icon">🔒</div>
+                                    <div class="settings-info">
+                                        <div class="settings-title">Privacy & Security</div>
+                                        <div class="settings-subtitle">Face ID, Passcode</div>
+                                    </div>
+                                </div>
+                                <div class="settings-item">
+                                    <div class="settings-icon">📶</div>
+                                    <div class="settings-info">
+                                        <div class="settings-title">Cellular</div>
+                                        <div class="settings-subtitle">Data, Roaming</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="home-indicator" data-action="home"></div>
+                </div>
+
+            </div>
+
+            <!-- Control Center -->
+            <div class="control-center" id="controlCenter">
+                <div class="control-header">
+                    <h3>Control Center</h3>
+                </div>
+                <div class="control-grid">
+                    <div class="control-item airplane">
+                        <div class="control-icon">✈️</div>
+                        <span>Airplane Mode</span>
+                    </div>
+                    <div class="control-item wifi">
+                        <div class="control-icon">📶</div>
+                        <span>Wi-Fi</span>
+                    </div>
+                    <div class="control-item bluetooth">
+                        <div class="control-icon">🔗</div>
+                        <span>Bluetooth</span>
+                    </div>
+                    <div class="control-item dnd">
+                        <div class="control-icon">🌙</div>
+                        <span>Do Not Disturb</span>
+                    </div>
+                </div>
+                <div class="brightness-control">
+                    <div class="brightness-icon">☀️</div>
+                    <input type="range" class="brightness-slider" min="0" max="100" value="80">
+                </div>
+            </div>
+
+            <!-- Notifications Panel -->
+            <div class="notifications-panel" id="notificationsPanel">
+                <div class="notifications-header">
+                    <h3>Notifications</h3>
+                </div>
+                <div class="notifications-list">
+                    <div class="notification-item">
+                        <div class="notification-icon">📱</div>
+                        <div class="notification-content">
+                            <div class="notification-title">RMF Phone</div>
+                            <div class="notification-text">Welcome to your new phone!</div>
+                            <div class="notification-time">now</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
